@@ -1,0 +1,132 @@
+@use "../helpers/mixins" as mixin;
+
+.header-container {
+ @include mixin.flexLayout(flex, space-between, center, wrap);
+ column-gap: .5rem;
+ background: #20243a; // #282c34;
+ color: #fff;
+ width: 100vw;
+ height: auto;
+ box-sizing: border-box;
+ padding: 0.4rem 1rem;
+
+ .header-left {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.2rem;
+ }
+
+ .icon-holder {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: #7f4be0;
+  @include mixin.flexLayout(flex, center, center, wrap);
+  cursor: pointer;
+
+  .icon-hover:hover {
+   animation: fa-bounce 1s infinite;
+  }
+
+ }
+
+ .tabs {
+  @include mixin.flexLayout(flex, center, center, wrap);
+  column-gap: .5rem;
+
+  .tab-item {
+   // background: #282c34;
+   border-radius: 10px;
+   color: #fff;
+   padding: 10px;
+   cursor: pointer;
+   transition: background-color .3s ease, color .3s ease;
+
+   &.active {
+    background: #3b3f4e;
+    color: #fff;
+   }
+
+   &:hover {
+    background: #3b3f4e;
+    color: #fff;
+    text-decoration: underline
+   }
+  }
+ }
+}
+
+.main-content-container {
+ @include mixin.flexLayout(row, start, start, wrap);
+ margin-top: auto;
+ box-sizing: border-box;
+ width: 100vw;
+ max-height: 90vh;
+ overflow-x: scroll;
+ // position: relative;
+ background: #e9e9e9; //#fadba2;
+
+ .side-bar-container {
+  max-width: 200px;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(196, 193, 193, 0.534);
+  backdrop-filter: blur(10px);
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  row-gap: 0.2rem;
+
+  .menu-container {
+   @include mixin.flexLayout(row, start, center, wrap);
+   margin: 0.4rem 0.4rem 0rem 0.4rem;
+   column-gap: 0.2rem;
+   padding: 0.4rem;
+   border-radius: 0.2rem;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #000;
+   cursor: pointer;
+   transition: background-color .4s ease, color .4s ease;
+
+   &.active {
+    background-color: black;
+    color: #fff;
+   }
+
+   &:hover {
+    background-color: black;
+    color: #fff;
+   }
+  }
+ }
+
+ .body-container {
+  @include mixin.flexLayout(row, start, start, wrap);
+  padding: .75rem 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 90vh;
+
+  >* {
+   display: contents;
+   width: 100%;
+  }
+ }
+
+ app-footer {
+  width: 100%;
+ }
+
+ .footer-container {
+  @include mixin.flexLayout(row, space-around, start, wrap);
+  background: #282c34;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+ }
+}

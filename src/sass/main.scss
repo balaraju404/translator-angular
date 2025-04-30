@@ -1,0 +1,15 @@
+@use "./helpers";
+@use "./components";
+@use "./pages";
+
+:root {
+ --clr: #20243a; //#282c34;
+ --clr-light: lighten(#20243a, 20%);
+ --clr-dark: darken(#20243a, 20%);
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ font-family: 'Inter', 'Segoe UI', sans-serif;
+}
