@@ -120,7 +120,8 @@ export class AddWordComponent {
   return {
    word: this.tf_word.selectedValue,
    // word_in_tel: this.tf_word_tel.selectedValue,
-   english_meaning: this.tf_translated_word.selectedValue
+   english_meaning: this.tf_translated_word.selectedValue,
+   created_date: new Date().toISOString()
   }
  }
 
