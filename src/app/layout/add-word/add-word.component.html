@@ -1,0 +1,19 @@
+<div class="col-xs-12">
+ <lib-card [card_mdl]="card_mdl">
+  <div class="container row-gap-2">
+   <div class="col-xs-12">
+    <lib-text-field [tf_mdl]="tf_word" (eventHandler)="eventHandler($event)"></lib-text-field>
+   </div>
+   <div class="col-xs-12">
+    <lib-text-field [tf_mdl]="tf_word_tel"></lib-text-field>
+   </div>
+   <div class="col-xs-12">
+    <lib-text-field [tf_mdl]="tf_translated_word"></lib-text-field>
+   </div>
+   <div class="col-xs-12 btn-grp">
+    <lib-button [btn_mdl]="btn_save" (eventHandler)="eventHandler($event)"></lib-button>
+    <lib-button [btn_mdl]="btn_clear" (eventHandler)="eventHandler($event)"></lib-button>
+   </div>
+  </div>
+ </lib-card>
+</div>

@@ -1,15 +1,15 @@
 @use "../helpers/variables.scss" as *;
 
-.card {
+#body .card {
  background: $white-clr;
- padding: 1rem;
+ padding: 1rem 0;
  border-radius: 10px;
  box-sizing: border-box;
  position: relative;
 
  .card-header {
   background: var(--clr);
-  padding: 1rem;
+  padding: .6rem;
   border-radius: 10px 10px 0 0;
 
   h2,
@@ -46,7 +46,7 @@ $themes: "default" #fff 10px,
  "dark" #212121;
 
 @each $theme, $clr, $radius in $themes {
- .card.#{$theme} {
+ #body .card.#{$theme} {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   // border-radius: $radius;
 

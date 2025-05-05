@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
- { path: "layout", loadComponent: () => import("./layout/layout.component").then(m => m.LayoutComponent) }
+ { path: "", pathMatch: "full", redirectTo: "/layout" },
+ { path: "layout", loadChildren: () => import("./layout/layout.routes").then(m => m.layoutRoutes) }
 ];
